@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-width: 100vh;
+    display: grid;
+    place-content: center;
+    & main{
+        display: grid;
+        gap:5px;
+        & .sqaure{
+            width: 200px;
+            height: 200px;
+            font-size: 3rem;
+            display: grid;
+            place-content: center;
+        }
+        & .sqaure:nth-child(1){
+            background-color: antiquewhite;
+            /* transform: translateX(100%); */
+            /* transform: rotateX(45deg); */
+            /* transform: scaleX(2); */
+            /* transform: skewX(45deg); */
+            animation-name: slide;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;;
+        }
+        & .sqaure:nth-child(2){
+            background-color: rgb(205, 218, 33);
+            /* transform: translate(-100px,-100px); */
+            /* transform: rotateY(60deg); */
+            /* transform: scaleY(1.3); */
+            /* transform: skewY(45deg); */
+            /* animation-name: slide;
+            animation-duration: 2s;
+            animation-iteration-count: infinite; */
+            transition: 2s slide infinite;
+        }
+        & .sqaure:nth-child(3){
+            background-color: rgb(76, 118, 173);
+            /* transform: rotate(45deg); */
+            /* transform: scale(1.5); */
+            /* transform: skew(15deg, 20deg); */
+            animation-name: slideV;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        & .sqaure:hover{
+            background-color: tomato;
+            transform: scale(1.5);
+            border-radius: 200px;
+        }
+        & .sqaure{
+            transition-property:all;
+            transition-duration: 1s;
+            transition-timing-function: ease-out;
+            /* transition-delay: 0.1s; */
+        }
+    }
+    
+}
+@keyframes slide{
+    0%{
+        transform: translateX(0) rotate(0);
+    }
+    33%{
+        transform: translateX(100%) rotate(45deg);
+    }
+    66%{
+        transform: translateX(-100%) rotate(180deg);
+    }
+    100%{
+        transform: translateX(0) rotate(0);
+    }
+}
+@keyframes slideV{
+    0%{
+        transform: translateY(0);
+    }
+    33%{
+        transform: translateY(100%);
+    }
+    66%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

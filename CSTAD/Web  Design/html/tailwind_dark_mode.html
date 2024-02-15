@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-4">Dark Mode Example</h1>
+
+        <div id="itemList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Items will be dynamically added here -->
+        </div>
+
+        <button id="toggleDarkMode" onclick="toggleDarkMode()" class="mt-8 px-4 py-2 bg-blue-500 text-white">Toggle Dark Mode</button>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            const htmlElement = document.documentElement;
+            const isDarkMode = htmlElement.classList.contains('dark');
+            
+            // Toggle dark mode and store the preference in localStorage
+            if (isDarkMode) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+            }
+        }
+
+        function renderItems() {
+            const itemList = document.getElementById('itemList');
+            itemList.innerHTML = "";
+
+            const items = [
+                'Item 1',
+                'Item 2',
+                'Item 3',
+                'Item 4',
+                'Item 5',
+            ];
+
+            items.forEach(item => {
+                const itemCard = document.createElement('div');
+                itemCard.className = 'bg-white dark:bg-gray-700 p-4 rounded shadow-md';
+                itemCard.textContent = item;
+                itemList.appendChild(itemCard);
+            });
+        }
+
+        // Check localStorage for dark mode preference
+        const storedDarkMode = localStorage.getItem('darkMode');
+        if (storedDarkMode === 'true') {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Initial render
+        renderItems();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            & h1 {
+                text-align: center;
+                color: purple;
+                & span{
+                    /* color: green; */
+                    /* color: #123; */
+                    color: rgb(100, 0, 0);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="container">
+            <h1>
+                Section path
+                &<span> inline section</span>
+            </h1>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang&family=Kantumruy+Pro&family=Koulen&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kantumruy Pro', sans-serif;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > .outer{
+    width: 75%;
+    height: 75%;
+    background-color: rgb(74, 20, 20);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #eae6e665;
+}
+
+main > .outer > .wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    backdrop-filter: blur(0.7px);
+    background-color:rgb(234,234,234);
+}
+
+main > .outer > .wrapper > .img {
+    width: 45%;
+    height: 90%;
+    background-image: url("./Image/gragon\ image.jpg"); /* Corrected the file path */
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    opacity: 1;
+    margin: 5px 15px 10px 20px;
+}
+
+main > .outer > .wrapper > .container{
+    width: 60%;
+    height: 90%;
+    background-color: rgb(234,234,234);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+main > .outer > .wrapper > .container > .calender {
+    width: 85%;
+    height: 85%;
+    font-weight: bold;
+    border-collapse: separate;
+    border-spacing: 5px;
+
+    & caption {
+        color: rgb(140, 9, 196);
+        font-weight: 700;
+        font-size: 2rem;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    & th:first-child,
+    & th:last-child {
+        color: red; 
+    }
+    & td:nth-child(1),
+    & td:nth-child(7){
+        color: red;
+    }
+    & th{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    }
+    & td {
+        text-align: center;
+        width: 10%;
+        background-color: #ffffff5f;
+        box-shadow: 2px 2px 3px #bab3b358;
+        border-radius: 50%;
+        font-size: 1.25rem;
+    }
+    & tbody tr:first-child td:nth-child(-n+5),
+    & tbody tr:last-child td:nth-child(n+2):nth-child(-n+7) {
+        color: rgba(169, 169, 169, 0.738);
+        border: 1px solid #7d76767b;
+        box-shadow: none;
+        background-color:  #dadde266;
+    }
+    & th:hover{
+        color: blue;
+        box-shadow: 2px 2xp 2x #eeeeee;
+    }
+    & td:hover{
+        color: rgb(217, 0, 255);
+        font-weight: bold;
+        background-color: aquamarine;
+        box-shadow: 2px 2px 3px #bab3b3;
+        border-radius: 50%;
+        transition: 0.25s ease-in-out;
+    }
+   
+}

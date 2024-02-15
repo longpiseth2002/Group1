@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "fantasy csp";
+    src: url(../font/fantasy_csp.ttf);
+}
+.selector-container>h1{
+    color: rebeccapurple;
+    &h1::after{
+    content: "after";
+    color: red;
+    }
+    &h1:hover::before{
+    content: "before";
+    color: brown;
+    }
+}
+.attribute-container{
+    & a{
+    color: black;
+    display: block;
+    margin-bottom: 10px;
+    }
+    & a[href^="http"]:hover::after{
+        content: "not secure";
+        color:red ;
+    }
+    & a[href$=".kh"]::before{
+        content: " (khmer website)";
+        color: green;
+    }
+}
+.text-container{
+    background-color: antiquewhite;
+    padding: 5px;
+    margin: 5px;
+    & h1{
+        font-family: "fantasy csp";
+        color: blue;
+        text-align: center;
+        text-decoration: underline;
+        text-transform: uppercase;
+        word-spacing: 10px;
+        letter-spacing: 3px;
+    }
+    & p{
+        line-height: 28px;
+        font-size: large;
+    }
+}
+.table-container{
+    margin-top: 25px;
+    & table{
+         /* border: solid black; */
+         border-collapse: collapse;
+         margin: 0px auto;
+    }
+    & th, td{
+        /* border: solid black; */
+        padding: 10px;
+    }
+    & tr{
+        background-color: azure;
+    }
+    & th{
+        color: white;
+        background-color: green;
+    }
+    & tbody > tr:nth-child(even){
+        background-color:#93a4a5d5;
+    }
+    & tbody >tr:hover{
+        background-color: #7bd3d7d5;
+        color:purple
+    }
+}
